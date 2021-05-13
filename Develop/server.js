@@ -3,7 +3,7 @@ const mongojs = require('mongojs');
 
 const app =express();
 
-const databaseUrl ='Workout Tracker';
+const databaseUrl ='Workout ';
 
 
 
