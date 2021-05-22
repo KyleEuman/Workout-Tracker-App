@@ -7,10 +7,11 @@ const PORT = process.env.PORT || 3000;
 
 const app =express();
 
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
-app.use(express.static('public'));
+
 
 mongoose.connect(process.env.MONGODB_URI ||
     'mongodb://localhost/trackerDB' , {
@@ -20,9 +21,9 @@ mongoose.connect(process.env.MONGODB_URI ||
 
     
    
-    app.use(express.static('public'));
-    app.use(require("./Develop/routes/api.js"));
-    app.use(require("./Develop/routes/htmlRoutes"));
+    
+   app.use(require("./routes/api.js"));
+   app.use(require("./routes/htmlRoutes"));
 
 
 app.listen(3000, () => {
