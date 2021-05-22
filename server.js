@@ -20,9 +20,9 @@ mongoose.connect(process.env.MONGODB_URI ||
 
     
    
-   
-    app.use(require("./routes/api.js"));
-    app.use(require("./routes/html.js"));
+    app.use(express.static('public'));
+    app.use(require("./Develop/routes/api.js"));
+    app.use(require("./Develop/routes/htmlRoutes"));
 
 
 app.listen(3000, () => {
@@ -30,4 +30,3 @@ app.listen(3000, () => {
 })
 
 
-module.exports =db;
