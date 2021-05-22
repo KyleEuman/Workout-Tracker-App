@@ -1,6 +1,7 @@
 const express = require('express');
 const mongojs = require('mongojs');
-const { Mongoose } = require('mongoose');
+const  mongoose  = require('mongoose');
+
 
 const PORT = process.env.PORT || 3000;
 
@@ -11,56 +12,17 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
-Mongoose.connect(process.env.MONGODB_URI ||
-    'mongodb://localhost/workout' , {
+mongoose.connect(process.env.MONGODB_URI ||
+    'mongodb://localhost/trackerDB' , {
         useNewUrlParser: true,
         useFIndAndModify: false
     });
 
-    app.use(require('./routes/api.js'));
-    app.use(require('./routes.html.js'));
-
-const databaseUrl ='Workout ';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+   
+   
+    app.use(require("./routes/api.js"));
+    app.use(require("./routes/html.js"));
 
 
 app.listen(3000, () => {
@@ -68,3 +30,4 @@ app.listen(3000, () => {
 })
 
 
+module.exports =db;

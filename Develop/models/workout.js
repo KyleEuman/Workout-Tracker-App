@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const WokoutSchema = new Schema({
+const WorkoutSchema = new Schema({
     name: {
         type: String,
         trim: true,
@@ -20,4 +20,4 @@ const WokoutSchema = new Schema({
 
 const Workout = mongoose.model('Workout', WorkoutSchema);
 
-module.exports = Workout;
+module.exports = Workout ;
